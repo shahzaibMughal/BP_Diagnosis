@@ -1,7 +1,52 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  color: #333333; }
+
+.welcome_bar {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 16px;
+  align-items: center; }
+  .welcome_bar #welcome_drop_down_btn {
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    box-sizing: border-box;
+    fill: #333333; }
+    .welcome_bar #welcome_drop_down_btn:hover {
+      cursor: pointer; }
+    .welcome_bar #welcome_drop_down_btn.open {
+      transform: rotate(180deg); }
+  .welcome_bar .popOver {
+    display: none;
+    background: #444;
+    position: absolute;
+    right: 12px;
+    top: 40px;
+    z-index: 100; }
+    .welcome_bar .popOver li {
+      list-style: none;
+      padding: 10px; }
+      .welcome_bar .popOver li:hover {
+        background: rgba(255, 255, 255, 0.2); }
+      .welcome_bar .popOver li a {
+        text-decoration: none;
+        color: white; }
+    .welcome_bar .popOver.popOver_open {
+      display: block; }
+  @media (max-width: 300px) {
+    .welcome_bar {
+      font-size: 0.8em;
+      margin: 0;
+      padding: 0; }
+      .welcome_bar #welcome_drop_down_btn {
+        width: 24px;
+        height: 24px;
+        padding: 0; } }
 
 .main_content {
   display: flex;
@@ -68,18 +113,28 @@
     background: rgba(154, 0, 0, 0.1); }
 
 .patient_dashboard {
-  width: 100%; }
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 64px; }
+  .patient_dashboard h1 {
+    font-weight: normal;
+    font-size: 2em;
+    text-align: center; }
   .patient_dashboard .cards {
-    width: 60%;
-    margin: 0 auto;
+    align-self: center;
+    width: 100%;
+    margin: 24px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center; }
   .patient_dashboard .card {
-    margin: 10px;
-    width: 150px;
-    height: 150px;
+    margin: 4px;
+    width: 180px;
+    height: 180px;
     display: inline-block;
     border-radius: 5px;
     border: 1px solid rgba(51, 51, 51, 0.1);
@@ -88,11 +143,22 @@
     align-items: center;
     justify-content: center;
     padding: 10px; }
-  .patient_dashboard h3 {
-    font-weight: normal; }
-  .patient_dashboard .card_icon {
-    fill: #9a0000;
-    width: 80%;
-    height: 80%; }
+    .patient_dashboard .card:hover {
+      background: rgba(154, 0, 0, 0.2);
+      cursor: pointer; }
+    .patient_dashboard .card .card_icon {
+      fill: #9a0000;
+      width: 80%;
+      height: 80%; }
+    .patient_dashboard .card a {
+      text-decoration: none;
+      font-size: 1.3em;
+      text-align: center; }
+  @media (min-width: 712px) {
+    .patient_dashboard h1 {
+      font-size: 2.5em; }
+    .patient_dashboard .card .card_icon {
+      width: 70%;
+      height: 70%; } }
 
 /*# sourceMappingURL=main.css.map */

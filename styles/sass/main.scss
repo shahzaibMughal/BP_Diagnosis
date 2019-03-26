@@ -5,22 +5,29 @@
 // Colors
 $primary_color : #9a0000;
 $primary_text_color: #333333;
+$primary_text_color_light: #ddd;
 $drawer_icon_color : grey;
 $list_item_selected_background : rgba($primary_color,0.1);
 $list_item_Hover_background : rgba($primary_color,0.2);
 $list_item_divider_color : rgba($primary_text_color,0.1);
-
+$popOver_background: #444;
 
 $drawer_item_icon_width_height : 24px;
 $drawer_icon_width_height : 48px;
 $drawer_width: 240px;
 
+$gutter_xxs : 4px;
 $gutter_xs : 10px;
 $gutter_s :  16px;
 $gutter_l :  24px;
 $gutter_xl : 48px;
 $gutter_xxl :  64px;
+$gutter_xxxl :  128px;
 
+$mobile_bp : 480px;
+$tablet_bp : 768px;
+$mobile_bp : 480px;
+$mobile_bp : 480px;
 
 
 
@@ -30,6 +37,73 @@ $gutter_xxl :  64px;
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  color: $primary_text_color;
+}
+
+.welcome_bar{
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: $gutter_s;
+  align-items: center;
+
+  #welcome_drop_down_btn{
+    width: 48px;
+    height: 48px;
+    padding: $gutter_xxs;
+    box-sizing: border-box;
+    fill: $primary_text_color;
+    &:hover{
+      cursor: pointer;
+    }
+
+    &.open{
+      transform: rotate(180deg);
+    }
+  }
+
+  .popOver{
+    display: none;
+    background: $popOver_background;
+    position: absolute;
+    right: 12px;
+    top: 40px;
+    z-index: 100;
+
+    li{
+      list-style: none;
+      padding: $gutter_xs;
+
+      &:hover{
+        background: rgba(white,0.2);
+      }
+      a{
+        text-decoration: none;
+        color: white;
+      }
+
+    }
+
+    &.popOver_open{
+      display: block;
+    }
+
+
+  }
+
+
+    @media (max-width: 300px){
+      font-size: 0.8em;
+      margin: 0;
+      padding: 0;
+      #welcome_drop_down_btn{
+        width: 24px;
+        height: 24px;
+        padding: 0;
+      }
+
+    }
 }
 
 .main_content{
@@ -127,20 +201,32 @@ $gutter_xxl :  64px;
 }
 
 .patient_dashboard{
+  padding: $gutter_s;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: $gutter_xxl;
+
+  h1{
+    font-weight: normal;
+    font-size: 2em;
+    text-align: center;
+  }
 
   .cards{
-    width: 60%;
-    margin: 0 auto;
+    align-self: center;
+    width: 100%;
+    margin: $gutter_l auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
   .card{
-    margin: $gutter_xs;
-    width: 150px;
-    height: 150px;
+    margin: $gutter_xxs;
+    width: 180px;
+    height: 180px;
     display: inline-block;
     border-radius: 5px;
     border: 1px solid $list_item_divider_color;
@@ -149,13 +235,83 @@ $gutter_xxl :  64px;
     align-items: center;
     justify-content: center;
     padding: $gutter_xs;
+
+    &:hover{
+      background: $list_item_Hover_background;
+      cursor: pointer;
+    }
+    .card_icon{
+      fill: $primary_color;
+      width: 80%;
+      height: 80%;
+    }
+    a{
+      text-decoration: none;
+      font-size: 1.3em;
+      text-align: center;
+    }
+
+
+
   }
-  h3{
-    font-weight: normal;
+
+  @media (min-width: 712px){
+    h1{
+      font-size: 2.5em;
+    }
+
+    .card{
+      .card_icon{
+        width: 70%;
+        height: 70%;
+      }
+    }
   }
-  .card_icon{
-    fill: $primary_color;
-    width: 80%;
-    height: 80%;
-  }
+  // @media (min-width: 1150px){
+  //   h1{
+  //     font-size: 2.5em;
+  //     text-align: left;
+  //   }
+  //
+  //   .cards{
+  //     width: 800px;
+  //     margin-left: 0;
+  //     margin-right: 0;
+  //     align-self: flex-start;
+  //   }
+  //   .card{
+  //     width: 200px;
+  //     height: 200px;
+  //     .card_icon{
+  //       width: 60%;
+  //       height: 60%;
+  //     }
+  //   }
+  // }
+
 }
+
+
+// footer{
+//   background: #191919;
+//   display: flex;
+//   padding: $gutter_xxl;
+//   box-sizing: border-box;
+//   p{
+//     color: $primary_text_color_light;
+//   }
+//   .contact_info{
+//     flex-basis: 50%;
+//   }
+//   .info_item{
+//     display: flex;
+//     align-items: center;
+//   }
+//   .infor_item_icon{
+//     margin: $gutter_xs;
+//
+//     fill: white;
+//     width: 24px;
+//     height: 24px;
+//   }
+// }
