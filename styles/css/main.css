@@ -3,16 +3,23 @@
   padding: 0;
   font-family: 'Roboto', sans-serif; }
 
+.main_content {
+  display: flex;
+  flex-direction: row; }
+
 .drawer {
   font-weight: normal;
   height: 100vh;
   display: inline-block;
   position: relative;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); }
-  .drawer.drawer_collapse li {
-    padding-right: 16px; }
-    .drawer.drawer_collapse li a {
-      display: none; }
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  flex-basis: 300px; }
+  .drawer.drawer_collapse {
+    flex-basis: 0px; }
+    .drawer.drawer_collapse li {
+      padding-right: 16px; }
+      .drawer.drawer_collapse li a {
+        display: none; }
   .drawer #drawer_icon {
     width: 48px;
     height: 48px;
@@ -59,5 +66,33 @@
     fill: #9a0000; }
   .drawer .item_selected {
     background: rgba(154, 0, 0, 0.1); }
+
+.patient_dashboard {
+  width: 100%; }
+  .patient_dashboard .cards {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
+  .patient_dashboard .card {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid rgba(51, 51, 51, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; }
+  .patient_dashboard h3 {
+    font-weight: normal; }
+  .patient_dashboard .card_icon {
+    fill: #9a0000;
+    width: 80%;
+    height: 80%; }
 
 /*# sourceMappingURL=main.css.map */

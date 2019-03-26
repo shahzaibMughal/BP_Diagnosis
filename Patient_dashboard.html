@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="styles/css/main.css">
   </head>
   <body>
-    <nav class="drawer">
-      <svg id="drawer_icon" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
-      <ul>
+
+    <div class="main_content">
+
+      <nav class="drawer drawer_collapse">
+        <svg id="drawer_icon" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+        <ul>
         <li class="item_selected">
           <svg class="drawer_item_icon" viewBox="0 0 24 24"> <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
           <a href="#">Dashbard</a>
@@ -48,7 +51,46 @@
         </li>
 
       </ul>
-    </nav>
+      </nav>
+
+
+      <section class="patient_dashboard">
+        <h1>Patient Dashboard</h1>
+        <div class="cards">
+            <div class=" col-xm-12 card">
+              <svg class="card_icon" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg>
+              <a href="#">My Profile</a>
+            </div>
+            <div class="card">
+              <svg class="card_icon" viewBox="0 0 24 24"><path d="M4.22,11.29L11.29,4.22C13.64,1.88 17.43,1.88 19.78,4.22C22.12,6.56 22.12,10.36 19.78,12.71L12.71,19.78C10.36,22.12 6.56,22.12 4.22,19.78C1.88,17.43 1.88,13.64 4.22,11.29M5.64,12.71C4.59,13.75 4.24,15.24 4.6,16.57L10.59,10.59L14.83,14.83L18.36,11.29C19.93,9.73 19.93,7.2 18.36,5.64C16.8,4.07 14.27,4.07 12.71,5.64L5.64,12.71Z" /></svg>
+              <a href="#">My Prescriptions</a>
+            </div>
+            <div class="card">
+              <svg class="card_icon" viewBox="0 0 24 24"><path d="M9,5A4,4 0 0,1 13,9A4,4 0 0,1 9,13A4,4 0 0,1 5,9A4,4 0 0,1 9,5M9,15C11.67,15 17,16.34 17,19V21H1V19C1,16.34 6.33,15 9,15M16.76,5.36C18.78,7.56 18.78,10.61 16.76,12.63L15.08,10.94C15.92,9.76 15.92,8.23 15.08,7.05L16.76,5.36M20.07,2C24,6.05 23.97,12.11 20.07,16L18.44,14.37C21.21,11.19 21.21,6.65 18.44,3.63L20.07,2Z" /></svg>
+              <a href="#">Ask For Prescription</a>
+            </div>
+            <div class="card">
+              <svg class="card_icon" viewBox="0 0 24 24"><path d="M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M5,15H8.11L9.62,12.15L10.38,17.92L14.07,13.21L15.89,15H19V19H5V15M19,13.46H16.53L13.93,10.86L11.44,14.05L10.5,7.08L7.17,13.46H5V5H7V6H17V5H19V6L19,13.46Z" /></svg>
+              <a href="#">Book Appointment</a>
+            </div>
+            <div class="card">
+              <svg class="card_icon" viewBox="0 0 24 24"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" /></svg>
+              <a href="#">Appointment History</a>
+            </div>
+            <div class="card">
+              <svg class="card_icon" viewBox="0 0 24 24"> <path d="M14.84,16.26C17.86,16.83 20,18.29 20,20V22H4V20C4,18.29 6.14,16.83 9.16,16.26L12,21L14.84,16.26M8,8H16V10A4,4 0 0,1 12,14A4,4 0 0,1 8,10V8M8,7L8.41,2.9C8.46,2.39 8.89,2 9.41,2H14.6C15.11,2 15.54,2.39 15.59,2.9L16,7H8M12,3H11V4H10V5H11V6H12V5H13V4H12V3Z" /></svg>
+              <a href="#">Doctors</a>
+            </div>
+        </div>
+      </section>
+
+    </div>
+
+
+
+
+
+
 
     <script type="text/javascript" src="main_script.js"></script>
   </body>

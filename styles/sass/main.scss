@@ -1,3 +1,5 @@
+// @import 'partials/bootstrapGrid.scss';
+
 
 //***** Variables
 // Colors
@@ -28,19 +30,25 @@ $gutter_xxl :  64px;
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+}
 
+.main_content{
+  display: flex;
+  flex-direction: row;
 }
 
 .drawer{
   font-weight: normal;
   height: 100vh;
   display: inline-block;
-  // width: $drawer_width;
   position: relative;
   box-shadow: 1px 1px 4px rgba(#000,0.2);
+  flex-basis: 300px;
 
   &.drawer_collapse{
     // transform: translateX(-($drawer_width));
+    flex-basis: 0px;
+
     li {
       padding-right: $gutter_s;
       a{
@@ -116,4 +124,38 @@ $gutter_xxl :  64px;
     background: $list_item_selected_background;
   }
 
+}
+
+.patient_dashboard{
+  width: 100%;
+
+  .cards{
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .card{
+    margin: $gutter_xs;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid $list_item_divider_color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: $gutter_xs;
+  }
+  h3{
+    font-weight: normal;
+  }
+  .card_icon{
+    fill: $primary_color;
+    width: 80%;
+    height: 80%;
+  }
 }
