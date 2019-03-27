@@ -16,6 +16,7 @@ $drawer_item_icon_width_height : 24px;
 $drawer_icon_width_height : 48px;
 $drawer_width: 240px;
 
+$gutter_xxxs : 2px;
 $gutter_xxs : 4px;
 $gutter_xs : 10px;
 $gutter_s :  16px;
@@ -30,6 +31,14 @@ $mobile_bp : 480px;
 $mobile_bp : 480px;
 
 
+
+%btn{
+  background: $primary_color;
+  color: white;
+  border: 0;
+  border-radius: 2px;
+  padding: $gutter_xxs;
+}
 
 
 
@@ -291,27 +300,108 @@ $mobile_bp : 480px;
 
 }
 
+footer{
+  background:  rgba(#191919,1);
 
-// footer{
-//   background: #191919;
-//   display: flex;
-//   padding: $gutter_xxl;
-//   box-sizing: border-box;
-//   p{
-//     color: $primary_text_color_light;
-//   }
-//   .contact_info{
-//     flex-basis: 50%;
-//   }
-//   .info_item{
-//     display: flex;
-//     align-items: center;
-//   }
-//   .infor_item_icon{
-//     margin: $gutter_xs;
-//
-//     fill: white;
-//     width: 24px;
-//     height: 24px;
-//   }
-// }
+  .footer_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: $gutter_l;
+    box-sizing: border-box;
+    // background-image: url('../assets/map.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 10% 0%;
+
+    p{
+      color: $primary_text_color_light;
+    }
+    .contact_info{
+      order: 2;
+      flex-basis: 100%;
+      flex-shrink: 0;
+      align-self: center;
+      padding: 0 $gutter_xl;
+      box-sizing: border-box;
+      .info_item{
+        display: flex;
+        align-items: center;
+      }
+      .info_item_icon{
+        margin: $gutter_xs;
+        fill: white;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+
+    }
+
+    .feedback_form{
+      flex-basis: 80%;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      padding: $gutter_l $gutter_xl;
+      box-sizing: border-box;
+      order: 1;
+
+      h2{
+        text-align: center;
+        color: white;
+        font-weight: normal;
+        margin-bottom: $gutter_s;
+      }
+      .feedback_form_item{
+        padding: $gutter_xxs;
+        border-radius: 2px;
+        border: 0px;
+        margin: $gutter_xxxs 0;
+        resize: none;
+      }
+      .feedback_form_btn{
+        @extend %btn;
+        margin-top: $gutter_xxs;
+        width: 80px;
+        align-self: flex-end;
+        font-size: 1.2em;
+      }
+    }
+
+    .copyright{
+      text-align: center;
+      margin-top: $gutter_s;
+      flex-basis: 100%;
+      order: 3;
+    }
+
+    @media (min-width: 500px){
+      flex-direction: row;
+      padding: 0;
+      .contact_info{
+        flex-basis: 40%;
+        order: 1;
+      }
+      .feedback_form{
+        flex-basis: 40%;
+      }
+    }
+    @media (min-width: 900px){
+      width: 1000px;
+      margin: 0 auto;
+      flex-direction: row;
+      padding: 0;
+      .contact_info{
+        flex-basis: 40%;
+        order: 1;
+      }
+      .feedback_form{
+        flex-basis: 40%;
+      }
+    }
+  }
+
+}
